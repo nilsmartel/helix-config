@@ -1,0 +1,55 @@
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+formatter = { command = "black", args = ["-q", "-"] }
+auto-format = true
+
+[[language]]
+name = "bash"
+formatter = { command = "beautysh", args=["-"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "-c", "/home/helix/dprint.json", "--stdin", "md" ] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "dprint", args = ["fmt", "-c", "/home/helix/dprint.json", "--stdin", "json"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+formatter = { command = "dprint", args = ["fmt", "-c", "/home/helix/dprint.json", "--stdin", "js" ] }
+auto-format = true
+
+[[language]]
+name = "html"
+formatter = { command = "dprint", args = ["--reformat", "--quiet", "--preserve-blank-lines", "--format-css", "--format-js", "-"] }
+auto-format = true
+
+[[language]]
+name = "julia"
+auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
+name = "assembly"
+scope = "source.S"
+injection-regex = "^(asm|s)$"
+file-types = ['s', 'S', 'asm']
+comment-token = '#'
+roots = []
+
+[[language]]
+name = "rust"
+
+[language.config]
+checkOnSave = { command = "clippy" }
+
+[language.config.check]
+command = "clippy"
